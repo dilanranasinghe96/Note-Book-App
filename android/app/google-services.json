@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "738649146943",
+    "project_id": "notebook1-flutter",
+    "storage_bucket": "notebook1-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738649146943:android:ce5d9bfd344390e7319a8a",
+        "android_client_info": {
+          "package_name": "com.example.note_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738649146943-db6qr9at3a2md15efojvij78enkc9ti8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBisF9O9427hDLS_XibWqriD-SOVYZ2epc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738649146943-db6qr9at3a2md15efojvij78enkc9ti8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "738649146943-26tlloj2krsse0sdmts50i5qvo2cdnbs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "lk.dilan_projects.note_book"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738649146943:android:5355ec28aae678b3319a8a",
+        "android_client_info": {
+          "package_name": "lk.dilan_projects.note_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738649146943-db6qr9at3a2md15efojvij78enkc9ti8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBisF9O9427hDLS_XibWqriD-SOVYZ2epc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738649146943-db6qr9at3a2md15efojvij78enkc9ti8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "738649146943-26tlloj2krsse0sdmts50i5qvo2cdnbs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "lk.dilan_projects.note_book"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
