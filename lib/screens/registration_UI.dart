@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:note_book/components/pwd_textfield.dart';
+import 'package:note_book/providers/signup_provider.dart';
+import 'package:provider/provider.dart';
 
-import 'login_ui.dart';
+import '../components/custom_button.dart';
+import '../components/custom_textfield.dart';
 
 class Registration_UI extends StatefulWidget {
   const Registration_UI({super.key});
@@ -10,130 +14,66 @@ class Registration_UI extends StatefulWidget {
 }
 
 class _Registration_UIState extends State<Registration_UI> {
-  get passwordController => null;
+  bool isobscure1 = true;
+  bool isobscure2 = true;
+
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height: size.height * 0.1,
               ),
               const Text("Registration",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
               const SizedBox(
                 height: 25,
               ),
-              //Full name
-              Row(
-                children: const [
-                  Text(
-                    "Full Name:",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ],
+
+              CustomTextField(
+                hint: 'Enter Email Address',
+                controller:
+                    Provider.of<SignUpProvider>(context).emailController,
               ),
-              const TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "Full name",
-                ),
+              CustomTextField(
+                hint: 'Enter Your name',
+                controller: Provider.of<SignUpProvider>(context).nameController,
               ),
-              const SizedBox(
-                height: 25,
+
+              PwdTextField(
+                hint: 'Enter Password',
+                controller:
+                    Provider.of<SignUpProvider>(context).passwordController,
               ),
-              //Email
-              Row(
-                children: const [
-                  Text(
-                    "E mail:",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ],
+
+              PwdTextField(
+                hint: 'Re-type Password',
+                controller: Provider.of<SignUpProvider>(context)
+                    .confirmPasswordController,
               ),
-              const TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "E mail",
-                ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              //Phone number
-              Row(
-                children: const [
-                  Text(
-                    "Phone No:",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ],
-              ),
-              const TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "Phone Number",
-                ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              //password
-              Row(
-                children: const [
-                  Text(
-                    "Password:",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ],
-              ),
-              TextField(
-                controller: passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "Password",
-                ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              Row(
-                children: const [
-                  Text(
-                    "Re-type Password:",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ],
-              ),
-              TextField(
-                controller: passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "Password",
-                ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
+
               //Register button
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginUI(),
-                        ));
-                  },
-                  child: const Text(
-                    "Register",
-                    style: TextStyle(fontSize: 20),
-                  )),
+              CustomButton(
+                buttonText: 'Register',
+                ontap: () {
+                  Provider.of<SignUpProvider>(context, listen: false)
+                      .signUpUser();
+                },
+                color: Colors.deepPurple,
+                height: 40,
+                width: 150,
+              )
             ],
           ),
         ),

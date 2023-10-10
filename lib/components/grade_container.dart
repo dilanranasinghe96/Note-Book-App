@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class GradeContainer extends StatelessWidget {
-  GradeContainer(
+  const GradeContainer(
       {super.key,
       required this.navi,
       required this.gName,
       required this.color});
 
-  dynamic navi;
-  String gName;
-  Color color;
+  final dynamic navi;
+  final String gName;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {

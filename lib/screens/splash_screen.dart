@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'login_ui.dart';
+import 'package:note_book/providers/user_provider.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,11 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 5), () {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const LoginUI(),
-          ));
+      Provider.of<UserProvider>(context, listen: false).checkAuthState(context);
     });
   }
 
